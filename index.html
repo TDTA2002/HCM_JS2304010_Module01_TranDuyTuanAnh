@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta dfhset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        bài 1: hợp nhất 2 mảng rồi sắp xếp 
+        input: list1 =[1,2,4], list2=[1,3,4]
+        output: [1,1,2,3,4,4]
+        bài 2:
+        input :nums = [2,7,11,15] target = 9
+        output : [0,1]
+        input: nums = [3,2,4] target = 6
+        Output: [1,2]
+        input: nums = [3,3] target = 6
+        output : [0,1]
+        input: nums = [3,6] target =6
+        output: "không có giá trị thỏa mãn"
+        bài 3 : 
+        input: strs =["flower","flow","flight"]
+        output:"fl"
+        input: strs = ["dog", "racecar", "car"]
+        output:""
+        Explanation:"không có tiền tố nào chung cả"
+     -->
+
+
+
+
+
+    <script>
+        // Bài 1
+        // function hopLaiVaSapXep() {
+        //     let list1 = prompt("Nhập vào mảng 1:").split(",").map(Number);
+        //     let list2 = prompt("Nhập vào mảng 2:").split(",").map(Number);
+        //     let hoplai = [...list1, ...list2];
+        //     hoplai.sort((a, b) => a - b);
+        //     return hoplai;
+        // }
+        // let ketqua = hopLaiVaSapXep();
+        // console.log(ketqua);
+
+
+
+
+
+        // Bài 2
+        // function timCapGiaTri() {
+        //     const nums = prompt("Nhập vào mảng số:").split(",").map(Number);
+        //     const target = Number(prompt("Nhập vào giá trị target:"));
+        //     const cảnhsama = {};
+        //     for (let i = 0; i < nums.length; i++) {
+        //         const phúcsama = target - nums[i];
+        //         if (phúcsama in cảnhsama) {
+        //             return [cảnhsama[phúcsama], i];
+        //         }
+        //         cảnhsama[nums[i]] = i;
+        //     }
+        //     return "Không có giá trị thỏa mãn";
+        // }
+        // console.log(timCapGiaTri());
+
+
+
+
+
+
+        // Bài 3
+        function timTienToChung(strs) {
+            if (strs.length == 0) {
+                return "";
+            }
+            let abc = "";
+            for (let i = 0; i < strs[0].length; i++) {
+                const dfh = strs[0][i];
+                for (let j = 1; j < strs.length; j++) {
+                    if (i >= strs[j].length || strs[j][i] !== dfh) {
+                        return abc;
+                    }
+                }
+                abc += dfh;
+            }
+            return abc;
+        }
+        const danhSachChuoi = prompt("Nhập danh sách chuỗi:");
+        const mangChuoi = danhSachChuoi.split(",");
+        const ketQua = timTienToChung(mangChuoi);
+        if (ketQua == "") {
+            console.log("Không có tiền tố chung nào cả.");
+        } else {
+            console.log("Kết quả: ", ketQua);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
